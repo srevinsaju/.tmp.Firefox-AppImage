@@ -39,9 +39,10 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|stable|Firefox*.AppImage.zsync' Firefox-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        export APPIMAGETOOL_GH_BRANCH_DEPLOY=stable
+        ./appimagetool-x86_64.AppImage firefox
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
@@ -86,9 +87,10 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|beta|Firefox*.AppImage.zsync' Firefox_Beta-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        export APPIMAGETOOL_GH_BRANCH_DEPLOY=beta
+        ./appimagetool-x86_64.AppImage firefox
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
@@ -133,9 +135,10 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|esr|Firefox*.AppImage.zsync' Firefox_ESR-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        export APPIMAGETOOL_GH_BRANCH_DEPLOY=esr
+        ./appimagetool-x86_64.AppImage firefox
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
@@ -179,9 +182,10 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|nightly|Firefox*.AppImage.zsync' Firefox_Nightly-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        export APPIMAGETOOL_GH_BRANCH_DEPLOY=nightly
+        ./appimagetool-x86_64.AppImage firefox
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
