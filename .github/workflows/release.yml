@@ -39,7 +39,7 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage -o appimagetool-x86_64.AppImage
         chmod +x *.AppImage
         export APPIMAGETOOL_GH_BRANCH_DEPLOY=stable
         ./appimagetool-x86_64.AppImage firefox
@@ -87,7 +87,7 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage -o appimagetool-x86_64.AppImage
         chmod +x *.AppImage
         export APPIMAGETOOL_GH_BRANCH_DEPLOY=beta
         ./appimagetool-x86_64.AppImage firefox
@@ -135,7 +135,7 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage -o appimagetool-x86_64.AppImage
         chmod +x *.AppImage
         export APPIMAGETOOL_GH_BRANCH_DEPLOY=esr
         ./appimagetool-x86_64.AppImage firefox
@@ -182,7 +182,7 @@ jobs:
     - name: Patch AppImage
       run: |
         cd firefox
-        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage appimagetool-x86_64.AppImage
+        wget https://github.com/srevinsaju/go-appimage/releases/download/continuous/appimagetool-2020-10-22_193207-x86_64.AppImage -o appimagetool-x86_64.AppImage
         chmod +x *.AppImage
         export APPIMAGETOOL_GH_BRANCH_DEPLOY=nightly
         ./appimagetool-x86_64.AppImage firefox
