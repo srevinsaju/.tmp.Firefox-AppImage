@@ -19,6 +19,7 @@ jobs:
 
     - name: Download Firefox
       run: |
+        sudo apt install appstream -y
         mkdir firefox
         cd firefox
         wget https://download.mozilla.org/\?product\=firefox-latest-ssl\&os\=linux64\&lang\=en-US 
@@ -28,6 +29,7 @@ jobs:
 
     - name: Patch to include files
       run: |
+        
         cd firefox
         cp ../AppRun firefox/.
         chmod +x firefox/AppRun
@@ -67,6 +69,7 @@ jobs:
 
     - name: Download Firefox Beta
       run: |
+        sudo apt install appstream -y
         mkdir firefox
         cd firefox
         wget https://download.mozilla.org/\?product\=firefox-beta-latest-ssl\&os\=linux64\&lang\=en-US
@@ -116,6 +119,7 @@ jobs:
 
     - name: Download Firefox ESR
       run: |
+        sudo apt install appstream -y
         mkdir firefox
         cd firefox
         wget https://download.mozilla.org/\?product\=firefox-esr-next-latest-ssl\&os\=linux64\&lang\=en-US -O firefox.tar.bz2
@@ -162,6 +166,7 @@ jobs:
 
     - name: Download Firefox Nightly
       run: |
+        sudo apt install appstream -y
         mkdir firefox
         cd firefox
         wget https://download.mozilla.org/\?product\=firefox-nightly-latest-ssl\&os\=linux64\&lang\=en-US
