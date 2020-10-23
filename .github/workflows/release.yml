@@ -191,6 +191,7 @@ jobs:
         chmod +x *.AppImage
         export APPIMAGETOOL_GH_BRANCH_DEPLOY=nightly
         ARCH=x86_64 ./appimagetool-x86_64.AppImage firefox
+        ./appimagetool-x*.AppImage sections Firefox*.AppImage
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
